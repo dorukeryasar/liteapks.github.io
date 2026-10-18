@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LiteAPKS - Roblox</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f2f3f5;color:#222;font-family:Arial}
+header{background:#17191c;color:white;padding:17px;
+display:flex;align-items:center;justify-content:space-between;
+position:sticky;top:0}
+.logo{font-size:24px;font-weight:bold}
+.logo span{color:#54d66b}
+.search{background:#303238;padding:10px;border-radius:8px}
+main{max-width:700px;margin:auto;padding:15px}
+.card{background:white;padding:18px;border-radius:13px;margin:14px 0}
+.app{display:flex;align-items:center;gap:16px}
+.roblox{width:75px;height:75px;background:#111;border-radius:15px;
+display:grid;place-items:center;color:white;font-size:48px}
+h2{font-size:20px}
+button{border:0;border-radius:9px;padding:15px;width:100%;
+background:#31a852;color:white;font-weight:bold;font-size:17px}
+.muted{color:#777;font-size:13px;line-height:1.6}
+#scare{display:none;position:fixed;inset:0;background:black;
+z-index:10;align-items:center;justify-content:center;flex-direction:column}
+#scare video{width:100%;height:85%;object-fit:contain}
+#close{width:auto;background:#333;color:white;padding:12px 28px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Lite<span>APKS</span></div>
+  <div class="search">⌕ Ara</div>
+</header>
+
+<main>
+  <p class="muted">Ana sayfa › Oyunlar › Roblox</p>
+
+  <section class="card app">
+    <div class="roblox">◩</div>
+    <div>
+      <h2>Roblox MOD APK</h2>
+      <div class="muted">Roblox Corporation</div>
+      <div class="muted">Android · Oyunlar</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Roblox MOD APK İndir</h2>
+    <p class="muted">Roblox APK'nın en yeni sürümünü keşfet.</p>
+    <button id="download">⬇ BEDAVA ROBUX APK İNDİR</button>
+    <p class="muted">Şaka demosudur; gerçek APK indirilmez.</p>
+  </section>
+
+  <section class="card">
+    <h2>Roblox hakkında</h2>
+    <p>Milyonlarca oyunu keşfet, arkadaşlarınla oyna!</p>
+  </section>
+
+  <section class="card">
+    <h2>Özellikler</h2>
+    <p>Android · Macera · Çok oyunculu</p>
+  </section>
+
+  <section class="card">
+    <h2>Son sürüm</h2>
+    <p>Performans iyileştirmeleri ve hata düzeltmeleri.</p>
+  </section>
+</main>
+
+<div id="scare">
+  <video id="video" controls playsinline>
+    <source src="jumpscare.mp4" type="video/mp4">
+  </video>
+  <button id="close">KAPAT</button>
+</div>
+
+<script>
+const scare=document.getElementById("scare");
+const video=document.getElementById("video");
+
+document.getElementById("download").onclick=()=>{
+  scare.style.display="flex";
+  video.currentTime=0;
+  video.play().catch(()=>{
+    video.controls=true;
+    alert("Videoyu başlatmak için oynat düğmesine bas.");
+  });
+};
+
+document.getElementById("close").onclick=()=>{
+  video.pause();
+  video.currentTime=0;
+  scare.style.display="none";
+};
+</script>
+</body>
+</html>
